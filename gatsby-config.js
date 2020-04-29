@@ -36,7 +36,7 @@ module.exports = {
          */
         baseUrl: "conradcasperio.local",
         // The protocol. This can be http or https.
-        protocol: "https",
+        protocol: "http",
         // The rest api route prefix that your WordPress site is using.
         // Sometimes this is modified by WordPress plugins.
         // If not set, it uses the default of "wp-json"
