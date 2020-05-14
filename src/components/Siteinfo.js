@@ -4,7 +4,12 @@ import styled from 'styled-components';
 
 const SiteInfoWrapper = styled.div`
     flex-grow:1;
+    color: white;
+    margin: auto 0;
+`
 
+const SiteTitle = styled.div`
+    font-weight: bold;
 `
 
 const SiteInfo = () => (
@@ -21,9 +26,9 @@ const SiteInfo = () => (
       }
     `} render={props => (
         <SiteInfoWrapper>
-            <div>
+            <SiteTitle>
                 {props.allWordpressSiteMetadata.edges[0].node.name}
-            </div>
+            </SiteTitle>
             <div>
                 {props.allWordpressSiteMetadata.edges[0].node.description}
             </div>

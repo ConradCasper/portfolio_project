@@ -8,6 +8,14 @@ const MainMenuWrapper = styled.div`
     background-color: rgb(3, 27, 77);
 `
 
+const MainMenuInner = styled.div`
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    width: 960px;
+    height: 100%;
+`
+
 const MenuItem = styled(Link)`
     color: white;
     display: block;
@@ -35,12 +43,14 @@ const MainMenu = () => (
       }
     `} render={props => (
         <MainMenuWrapper>
+            <MainMenuInner>
             <SiteInfo/>
             {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
                 <MenuItem to={item.object_slug} key={item.title}>
                     {item.title}
                 </MenuItem>
             ))}
+            </MainMenuInner>
         </MainMenuWrapper>
     )}/>
 )
