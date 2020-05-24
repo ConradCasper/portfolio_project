@@ -67,7 +67,7 @@ exports.createPages = ({ graphql, actions }) => {
       })
       // ==== END PAGES ====
  
-      // ==== POSTS (WORDPRESS NATIVE AND ACF) ====
+      // ==== PORTFOLIO ====
       .then(() => {
         graphql(
           `
@@ -109,6 +109,26 @@ exports.createPages = ({ graphql, actions }) => {
           resolve()
         })
       })
-    // ==== END POSTS ====
+    // ==== END PORTFOLIO ====
+    // ==== BLOG POSTS ====
+    .then(() => {
+      graphql(`
+        {
+          allWordpressPost{
+            edges{
+              node{
+                excerpt
+                wordpress_id
+                date
+                title
+                content
+              }
+            }
+          }
+        }
+      `).then(result => {
+        
+      })
+    })
   })
 }
