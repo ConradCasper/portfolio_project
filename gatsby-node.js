@@ -75,10 +75,11 @@ exports.createPages = ({ graphql, actions }) => {
             allWordpressWpPortfolio {
               edges{
                 node{
-                    id
+                  id
                   title
                   excerpt
                   content
+                  slug
                   featured_media {
                     source_url
                   }

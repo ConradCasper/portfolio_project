@@ -29,6 +29,7 @@ const PortfolioItems = () => {
                   title
                   excerpt
                   content
+                  slug
                   featured_media {
                     source_url
                   }
