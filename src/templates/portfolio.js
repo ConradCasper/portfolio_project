@@ -12,12 +12,24 @@ export default ({ pageContext }) => (
         <h1>
             {pageContext.title}
         </h1>
-        <strong>
-            Website url:
-        </strong>
-        <a href={pageContext.acf.portfolio_url} target="_blank" rel="noopener noreferrer">
-            {pageContext.acf.portfolio_url}
-        </a>
+        {pageContext.acf.portfolio_url !== "" ? 
+            <div>
+                <strong>
+                    Website url:
+                </strong>
+                <a href={pageContext.acf.portfolio_url} target="_blank" rel="noopener noreferrer">
+                {pageContext.acf.portfolio_url}
+                </a>
+            </div>
+
+            :
+
+            <div>
+                
+            </div>
+
+        }
+        
         <div>
             <FeaturedImage src={pageContext.featured_media.source_url} /> 
         </div>
