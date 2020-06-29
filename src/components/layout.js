@@ -15,6 +15,12 @@ const GlobalStyles = createGlobalStyle`
 const LayoutWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
+  position: relative;
+  background: #fff;
+  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
+  padding: 1em;
+  border-radius: .28571429rem;
+  border: 1px solid rgba(34,36,38,.15);
 `
 
 const Layout = ({ children }) => (
