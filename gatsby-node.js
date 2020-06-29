@@ -32,6 +32,10 @@ exports.createPages = ({ graphql, actions }) => {
                 title
                 content
                 template
+                featured_media{
+                  caption
+                  source_url
+                }
               }
             }
           }
