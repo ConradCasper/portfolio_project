@@ -2,9 +2,17 @@ import React from 'react'
 import Layout from '../components/layout'
 import styled from 'styled-components'
 
-const FeaturedImage = styled.img`
-    max-width: 300px;
-    margin: 16px 0;
+// const FeaturedImage = styled.img`
+//     max-width: 300px;
+//     margin: 16px 0;
+// `
+
+const YouTubeVideoWrapper = styled.div`
+    position:relative;
+    padding-bottom:56.25%;
+    padding-top:30px;
+    height:0;
+    overflow:hidden;
 `
 
 export default ({ pageContext }) => (
@@ -31,8 +39,11 @@ export default ({ pageContext }) => (
         }
         
         <div>
-            <FeaturedImage src={pageContext.featured_media.source_url} /> 
+            {/* <FeaturedImage src={pageContext.featured_media.source_url} />  */}
         </div>
         <div dangerouslySetInnerHTML={{__html: pageContext.content}}/>
+        <YouTubeVideoWrapper>
+            <div dangerouslySetInnerHTML={{__html: pageContext.excerpt}} /> 
+        </YouTubeVideoWrapper>
     </Layout>
 )
