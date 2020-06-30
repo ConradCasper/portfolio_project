@@ -10,6 +10,11 @@ const SiteInfoWrapper = styled.div`
 
 const SiteTitle = styled.div`
     font-weight: bold;
+    padding: 0px 0px 0px 5px;
+`
+
+const Tagline = styled.div`
+    padding: 0px 0px 0px 5px;
 `
 
 const SiteInfo = () => (
@@ -29,9 +34,9 @@ const SiteInfo = () => (
             <SiteTitle>
                 {props.allWordpressSiteMetadata.edges[0].node.name}
             </SiteTitle>
-            <div>
+            <Tagline>
                 {props.allWordpressSiteMetadata.edges[0].node.description}
-            </div>
+            </Tagline>
         </SiteInfoWrapper>
     )}/>
 );
