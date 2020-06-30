@@ -89,6 +89,7 @@ exports.createPages = ({ graphql, actions }) => {
                   }
                   acf {
                     portfolio_url
+                    youtube_embed
                   }
                 }
               }

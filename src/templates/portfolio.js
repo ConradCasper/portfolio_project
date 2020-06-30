@@ -15,7 +15,7 @@ const YouTubeEmbedResponsive = styled.div`
   padding-top:30px;
   height:0;
   overflow:hidden;
-  p, iframe, object, embed{
+  iframe, object, embed{
     position:absolute;
     top:0;
     left:0;
@@ -45,18 +45,12 @@ export default ({ pageContext }) => (
 
             :
 
-            <div>
-                
-            </div>
+            null
 
         }
         
-        <div>
-            {/* <FeaturedImage src={pageContext.featured_media.source_url} />  */}
-        </div>
+        
         <div dangerouslySetInnerHTML={{__html: pageContext.content}}/>
-        <YouTubeEmbedResponsive>
-            {pageContext.excerpt}
-        </YouTubeEmbedResponsive>
+        <YouTubeEmbedResponsive dangerouslySetInnerHTML={{__html: pageContext.acf.youtube_embed}} />
     </Layout>
 )
