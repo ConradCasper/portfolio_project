@@ -5,7 +5,7 @@ import SiteInfo from './Siteinfo'
 
 const MainMenuWrapper = styled.div`
     display: flex;
-    background-color: rgb(3, 27, 77);
+    background-color: #728792;
 `
 
 const MainMenuInner = styled.div`

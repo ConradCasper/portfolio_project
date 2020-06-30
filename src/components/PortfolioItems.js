@@ -4,14 +4,17 @@ import styled from 'styled-components';
 
 const PortfolioItemsWrapper = styled.div`
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
+    
 `
 
 const PortfolioItem = styled.div`
-    width: 300px;
+    width: 250px;
     border: 1px solid #efefef;
     padding: 16px;
     margin: 16px;
+    
 `
 
 const PortfolioImage = styled.img`
