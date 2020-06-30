@@ -8,12 +8,27 @@ import styled from 'styled-components'
 // `
 
 const YouTubeVideoWrapper = styled.div`
-    position:relative;
+    position: relative;
     padding-bottom:56.25%;
     padding-top:30px;
     height:0;
     overflow:hidden;
 `
+
+const YouTubeVideo = styled.div`
+    position:absolute;
+    top:0;
+    left:0;
+    right: 0;
+    bottom: 0;
+    max-width:600px;
+    height:100%;
+    margin: auto;
+`
+
+
+
+
 
 export default ({ pageContext }) => (
     <Layout>
@@ -43,7 +58,7 @@ export default ({ pageContext }) => (
         </div>
         <div dangerouslySetInnerHTML={{__html: pageContext.content}}/>
         <YouTubeVideoWrapper>
-            <div dangerouslySetInnerHTML={{__html: pageContext.excerpt}} /> 
+            <YouTubeVideo dangerouslySetInnerHTML={{__html: pageContext.excerpt}} /> 
         </YouTubeVideoWrapper>
     </Layout>
 )
