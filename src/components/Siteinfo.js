@@ -4,7 +4,7 @@ import styled from 'styled-components';
 
 const SiteInfoWrapper = styled.div`
     flex-grow:1;
-    color: white;
+    color: #728792;
     margin: auto 0;
 `
 

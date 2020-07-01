@@ -5,7 +5,7 @@ import SiteInfo from './Siteinfo'
 
 const MainMenuWrapper = styled.div`
     display: flex;
-    background-color: #728792;
+    background-color: white;
 `
 
 const MainMenuInner = styled.div`
@@ -17,7 +17,7 @@ const MainMenuInner = styled.div`
 `
 
 const MenuItem = styled(Link)`
-    color: white;
+    color: #728792;
     display: block;
     padding: 8px 16px;
     text-decoration: none;
@@ -45,6 +45,7 @@ const MainMenu = () => (
     `} render={props => (
         <MainMenuWrapper>
             <MainMenuInner>
+          
             <SiteInfo/>
             {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
                 <MenuItem to={`/${item.object_slug}`} key={item.title}>

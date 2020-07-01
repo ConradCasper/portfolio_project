@@ -1,7 +1,8 @@
 import React from "react";
 import MainMenu from './MainMenu';
 import styled, {createGlobalStyle} from 'styled-components';
-
+import { Helmet } from "react-helmet"
+import { StaticQuery, graphql } from 'gatsby';
 
 
 const GlobalStyles = createGlobalStyle`
@@ -18,21 +19,35 @@ const LayoutWrapper = styled.div`
   margin: 0 auto;
   position: relative;
   background: #fff;
-  box-shadow: 0 1px 2px 0 rgba(34,36,38,.15);
   padding: 1em;
-  border-radius: .28571429rem;
-  border: 1px solid rgba(34,36,38,.15);
+  box-shadow: 2px 2px 2px 3px rgba(34,36,38,.15);
+  // border-radius: .28571429rem;
+  // border: 1px solid rgba(34,36,38,.15);
 `
 
 const Layout = ({ children }) => (
-  <div>
+  <>
+    
+    <StaticQuery query={graphql`
+      {
+        allWordpressWpFavicon{
+          edges{
+            node{
+              url{
+                source_url
+              }
+            }
+          }
+        }
+      }
+    `} render={props => <Helmet><link rel="icon" href={props.allWordpressWpFavicon.edges[0].node.url.source_url} /></Helmet>} />
     <GlobalStyles />
     <MainMenu/>
     <LayoutWrapper>
       {children}
     </LayoutWrapper>
     
-  </div>
+  </>
 )
 
 

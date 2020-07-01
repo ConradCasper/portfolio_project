@@ -14,6 +14,9 @@ const PortfolioItem = styled.div`
     border: 1px solid #efefef;
     padding: 16px;
     margin: 16px;
+    &:hover {
+      box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.52);
+    }
     
 `
 
