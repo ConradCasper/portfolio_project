@@ -12,12 +12,9 @@ const PortfolioItemsWrapper = styled.div`
 const PortfolioItem = styled.div`
     width: 250px;
     border: 1px solid #efefef;
-    padding: 16px;
+    padding: 18px;
     margin: 16px;
-    &:hover {
-      box-shadow: 5px 5px 20px 0px rgba(0,0,0,0.52);
-    }
-    
+    border-radius: 15px;
 `
 
 const PortfolioImage = styled.img`

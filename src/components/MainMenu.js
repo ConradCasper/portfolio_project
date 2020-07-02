@@ -6,6 +6,7 @@ import SiteInfo from './Siteinfo'
 const MainMenuWrapper = styled.div`
     display: flex;
     background-color: white;
+    box-shadow: 0px -4px 26px 2px rgba(194,194,194,1);
 `
 
 const MainMenuInner = styled.div`
@@ -14,6 +15,7 @@ const MainMenuInner = styled.div`
     display: flex;
     width: 960px;
     height: 100%;
+    align-items: center;
 `
 
 const MenuItem = styled(Link)`

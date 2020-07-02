@@ -1,17 +1,27 @@
 import React from 'react';
 import {graphql, StaticQuery} from 'gatsby';
 import styled from 'styled-components';
+import Logo from './logo';
+
 
 const SiteInfoWrapper = styled.div`
-    flex-grow:1;
+    flex-grow: 1;
     color: #728792;
     margin: auto 0;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    height: 65px;
 `
 
-const SiteTitle = styled.div`
-    font-weight: bold;
-    padding: 0px 0px 0px 5px;
+const HahaDiv = styled.div`
+    width: 1px;
+    height: 24px;
+    margin-right: 14px;
+    margin-left: 15px;
+    border-left: 1px solid rgba(204, 204, 204, 1);
 `
+
 
 const Tagline = styled.div`
     padding: 0px 0px 0px 5px;
@@ -31,9 +41,8 @@ const SiteInfo = () => (
       }
     `} render={props => (
         <SiteInfoWrapper>
-            <SiteTitle>
-                {props.allWordpressSiteMetadata.edges[0].node.name}
-            </SiteTitle>
+            <Logo />
+            <HahaDiv />
             <Tagline>
                 {props.allWordpressSiteMetadata.edges[0].node.description}
             </Tagline>

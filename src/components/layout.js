@@ -18,11 +18,9 @@ const LayoutWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
   position: relative;
-  background: #fff;
+  background: #ffffff;
   padding: 1em;
-  box-shadow: 2px 2px 2px 3px rgba(34,36,38,.15);
-  // border-radius: .28571429rem;
-  // border: 1px solid rgba(34,36,38,.15);
+  margin-top: 25px;
 `
 
 const Layout = ({ children }) => (
