@@ -11,7 +11,7 @@ const slash = require(`slash`)
 // Will create pages for WordPress posts (route : /post/{slug})
 exports.createPages = ({ graphql, actions }) => {
   const { createPage, createRedirect } = actions
-  createRedirect({ fromPath: '/', toPath: '/portfolio', redirectInBrowser: true, isPermanent: true })
+  createRedirect({ fromPath: '/home', toPath: '/', redirectInBrowser: true, isPermanent: true })
   return new Promise((resolve, reject) => {
     // The “graphql” function allows us to run arbitrary
     // queries against the local WordPress graphql schema. Think of
@@ -63,7 +63,7 @@ exports.createPages = ({ graphql, actions }) => {
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
-            path: `/${edge.node.slug}/`,
+            path: (edge.node.slug=='home') ? '/' : `${edge.node.slug}`,
             component: slash(edge.node.template === `portfolio_under_content.php` ? portfolioUnderContentTemplate : pageTemplate),
             context: edge.node,
           })
