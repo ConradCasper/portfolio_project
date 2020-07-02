@@ -16,6 +16,7 @@ const MainMenuInner = styled.div`
     width: 960px;
     height: 100%;
     align-items: center;
+    padding: 0 16px 0 0;
 `
 
 const MenuItem = styled(Link)`

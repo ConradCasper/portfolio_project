@@ -8,7 +8,7 @@ const SiteInfoWrapper = styled.div`
     flex-grow: 1;
     color: #728792;
     margin: auto 0;
-    padding: 0 0 0 2px;
+    padding: 0 0 0 16px;
     display: flex;
     flex-flow: row;
     align-items: center;
