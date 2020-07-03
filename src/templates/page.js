@@ -2,20 +2,30 @@ import React from 'react';
 import Layout from '../components/layout';
 import styled, { keyframes } from 'styled-components';
 
-const fadeIn = keyframes`
+const headerFadeIn = keyframes`
     0% {
         opacity: 0;
-        transform: translateY(100px);
+        transform: translateX(100px);
     }
     100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0);
     }
 `
 
-const FadeIn = styled.div`
-animation: 2s ${fadeIn} ease-out;
+const contentFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
 `
+
+
 
 // const ProfileImage = styled.img`
 //     max-width: 235px;
@@ -26,23 +36,36 @@ animation: 2s ${fadeIn} ease-out;
 
 const ContentContainer = styled.div`
     max-width: 650px;
-   
-    margin: auto;
+    backspace-visibility: hidden;
+    margin: 0 auto;
     text-align: center;
 `
 
-const Content = styled.h1`
-    display: inline-block;
+const Header = styled.h1`
+    margin-bottom: 0;
     font-size: 50px;
+    animation: 2s ${headerFadeIn} ease-out;
+    
+`
+
+const Content = styled.div`
+    font-size: 25px;
+    margin: 0;
+    animation: 2s ${contentFadeIn} ease-out;
+    
+    p {
+        margin-top: 0;
+    }
 `
 
 
 export default ({ pageContext }) => (
     <Layout>
-        <FadeIn>
+        
             <ContentContainer>
-                <Content dangerouslySetInnerHTML={{__html: pageContext.content}}/>
+                <Header dangerouslySetInnerHTML={{__html: pageContext.acf.header}}/>
+                <Content dangerouslySetInnerHTML={{__html: pageContext.content}} />
             </ContentContainer>
-        </FadeIn>
+    
     </Layout>
 )

@@ -36,6 +36,9 @@ exports.createPages = ({ graphql, actions }) => {
                   caption
                   source_url
                 }
+                acf{
+                  header
+                }
               }
             }
           }
