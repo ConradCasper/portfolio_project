@@ -14,7 +14,7 @@ const fadeIn = keyframes`
 `
 
 const FadeIn = styled.div`
-animation: 5s ${fadeIn} ease-out;
+animation: 2s ${fadeIn} ease-out;
 `
 
 // const ProfileImage = styled.img`
@@ -33,6 +33,7 @@ const ContentContainer = styled.div`
 
 const Content = styled.h1`
     display: inline-block;
+    font-size: 50px;
 `
 
 

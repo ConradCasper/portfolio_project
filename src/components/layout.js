@@ -20,7 +20,7 @@ const LayoutWrapper = styled.div`
   position: relative;
   background: #ffffff;
   padding: 1em;
-  margin-top: 20px;
+  margin-top: 25px;
 `
 
 const Layout = ({ children }) => (
