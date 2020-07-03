@@ -13,7 +13,7 @@ const MainMenuInner = styled.div`
     max-width: 960px;
     margin: 0 auto;
     display: flex;
-    width: 960px;
+    // width: 960px;
     height: 100%;
     align-items: center;
     padding: 0 16px 0 0;
