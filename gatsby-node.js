@@ -52,22 +52,41 @@ exports.createPages = ({ graphql, actions }) => {
         }
  
         // Create Page pages.
-        const pageTemplate = path.resolve("./src/templates/page.js")
+        const homeTemplate = path.resolve("./src/templates/home.js")
+        const aboutTemplate = path.resolve("./src/templates/about.js")
+        const contactTemplate = path.resolve("./src/templates/contact.js")
         const portfolioUnderContentTemplate = path.resolve("./src/templates/portfolioUnderContent.js")
         // We want to create a detailed page for each
         // page node. We'll just use the WordPress Slug for the slug.
         // The Page ID is prefixed with 'PAGE_'
+
+
+        
+
+
         _.each(result.data.allWordpressPage.edges, edge => {
           // Gatsby uses Redux to manage its internal state.
           // Plugins and sites can use functions like "createPage"
           // to interact with Gatsby.
+
+          // deciding which template to use based on the slug
+          let component;
+          const { slug } = edge.node;
+          if(slug === 'home'){
+            component = homeTemplate;
+          }else if(slug === 'about'){
+            component = aboutTemplate;
+          }else if(slug === 'contact'){
+            component = contactTemplate;         
+          }
+
           createPage({
             // Each page is required to have a `path` as well
             // as a template component. The `context` is
             // optional but is often necessary so the template
             // can query data specific to each page.
             path: (edge.node.slug=='home') ? '/' : `${edge.node.slug}`,
-            component: slash(edge.node.template === `portfolio_under_content.php` ? portfolioUnderContentTemplate : pageTemplate),
+            component: slash(edge.node.template === `portfolio_under_content.php` ? portfolioUnderContentTemplate : component),
             context: edge.node,
           })
         })

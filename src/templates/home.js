@@ -2,16 +2,16 @@ import React from 'react';
 import Layout from '../components/layout';
 import styled, { keyframes } from 'styled-components';
 
-// const headerFadeIn = keyframes`
-//     0% {
-//         opacity: 0;
-//         transform: translateX(100px);
-//     }
-//     100% {
-//         opacity: 1;
-//         transform: translateX(0);
-//     }
-// `
+const headerFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+`
 
 const contentFadeIn = keyframes`
     0% {
@@ -41,12 +41,12 @@ const ContentContainer = styled.div`
     text-align: center;
 `
 
-// const Header = styled.h1`
-//     margin-bottom: 0;
-//     font-size: 50px;
-//     animation: 2s ${headerFadeIn} ease-out;
+const Header = styled.h1`
+    margin-bottom: 0;
+    font-size: 50px;
+    animation: 2s ${headerFadeIn} ease-out;
     
-// `
+`
 
 const Content = styled.div`
     font-size: 25px;
@@ -63,7 +63,7 @@ export default ({ pageContext }) => (
     <Layout>
         
             <ContentContainer>
-                {/* <Header dangerouslySetInnerHTML={{__html: pageContext.acf.header}}/> */}
+                <Header dangerouslySetInnerHTML={{__html: pageContext.acf.header}}/>
                 <Content dangerouslySetInnerHTML={{__html: pageContext.content}} />
             </ContentContainer>
     
