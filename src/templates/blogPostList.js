@@ -16,6 +16,7 @@ const PageNumberWrapper = styled.div`
 const PageNumber = styled(Link)`
     display: block;
     padding: 8px 16px;
+    text-decoration: none;
 `
 
 export default ({ pageContext }) => (
