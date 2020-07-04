@@ -1,5 +1,5 @@
 import React from "react";
-import MainMenu from './MainMenu';
+import NavBar from './Nav/NavBar';
 import styled, {createGlobalStyle} from 'styled-components';
 import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from 'gatsby';
@@ -40,7 +40,7 @@ const Layout = ({ children }) => (
       }
     `} render={props => <Helmet><title>Conrad Casper</title><link rel="icon" href={props.allWordpressWpFavicon.edges[0].node.url.source_url} /></Helmet>} />
     <GlobalStyles />
-    <MainMenu/>
+    <NavBar/>
     <LayoutWrapper>
       {children}
     </LayoutWrapper>

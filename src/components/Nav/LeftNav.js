@@ -1,18 +1,19 @@
 import React from 'react';
 import {graphql, StaticQuery} from 'gatsby';
 import styled from 'styled-components';
-import Logo from './logo';
+import Logo from '../logo';
 
 
 const SiteInfoWrapper = styled.div`
     flex-grow: 1;
     color: #728792;
     margin: auto 0;
-    padding: 0 0 0 16px;
+    // padding: 0 0 0 16px;
     display: flex;
     flex-flow: row;
     align-items: center;
     height: 65px;
+    width: 100%;
 `
 
 const HahaDiv = styled.div`
@@ -28,7 +29,7 @@ const Tagline = styled.div`
     padding: 0px 0px 0px 5px;
 `
 
-const SiteInfo = () => (
+const LeftNav = () => (
     <StaticQuery query={graphql`
     {
         allWordpressSiteMetadata{
@@ -51,4 +52,4 @@ const SiteInfo = () => (
     )}/>
 );
 
-export default SiteInfo;
+export default LeftNav;
