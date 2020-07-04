@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
+import RightNav from './RightNav';
 
 
 
@@ -13,11 +14,12 @@ const StyledBurger = styled.div`
     display: flex;
     justify-content: space-around;
     flex-flow: column nowrap;
+    z-index: 20;
 
     div {
         width: 2rem;
         height: 0.25rem;
-        background: ${({ open }) => open ? '#000000' : '#808080'};
+        background: ${({ open }) => open ? '#808080' : '#000000'};
         border-radius: 10px;
         transform-origin: 1px;
         transition: all 0.3s linear;
@@ -43,11 +45,14 @@ const StyledBurger = styled.div`
 const Burger = () => {
     const [ open, setOpen ] = useState(false)
     return (
-        <StyledBurger open={open} onClick={() => setOpen(!open)}>
-            <div/>
-            <div/>
-            <div/>
-        </StyledBurger>
+        <>
+            <StyledBurger open={open} onClick={() => setOpen(!open)}>
+                <div/>
+                <div/>
+                <div/>
+            </StyledBurger>
+            <RightNav open={open} />
+        </>
     )
 };
 

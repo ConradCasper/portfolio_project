@@ -10,15 +10,16 @@ const NavItemWrapper = styled.div`
     justify-content: space-between;
 
     @media (max-width: 768px) {
-        display:none;
         flex-flow: column nowrap;
         background: #0D2538;
         position: fixed;
+        transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
         top: 0;
         right: 0;
         height: 100vh;
         width: 300px;
         padding-top: 3.5rem;
+        transition: transform 0.3s ease-in-out;
     }
 `;
 
@@ -30,7 +31,7 @@ const NavItem = styled(Link)`
 `
 
 
-const RightNav = () => (
+const RightNav = ({ open }) => (
     <StaticQuery query={graphql`
     {
         allWordpressWpApiMenusMenusItems(filter: {
@@ -50,7 +51,7 @@ const RightNav = () => (
         }
       }
     `} render={props => (
-        <NavItemWrapper>
+        <NavItemWrapper open={open}>
             {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
             
             <NavItem to={`/${item.object_slug}`} key={item.title}>

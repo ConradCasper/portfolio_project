@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import LeftNav from './LeftNav';
-import RightNav from './RightNav';
 import Burger from './Burger';
 
 const NavBarWrapper = styled.div`
@@ -29,7 +28,6 @@ const NavBar = () => (
     <NavBarInner>
       <LeftNav/>
       <Burger />
-      <RightNav/>
     </NavBarInner>
   </NavBarWrapper>
 )
