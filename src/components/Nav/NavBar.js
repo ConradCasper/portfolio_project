@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import LeftNav from './LeftNav';
 import RightNav from './RightNav';
+import Burger from './Burger';
 
 const NavBarWrapper = styled.div`
     display: flex;
@@ -27,10 +28,13 @@ const NavBar = () => (
   <NavBarWrapper>
     <NavBarInner>
       <LeftNav/>
+      <Burger />
       <RightNav/>
     </NavBarInner>
   </NavBarWrapper>
 )
+      
+    
           
           
 export default NavBar;

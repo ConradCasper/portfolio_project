@@ -62,10 +62,10 @@ const Content = styled.div`
 export default ({ pageContext }) => (
     <Layout>
         
-            <ContentContainer>
+            {/* <ContentContainer>
                 <Header dangerouslySetInnerHTML={{__html: pageContext.acf.header}}/>
                 <Content dangerouslySetInnerHTML={{__html: pageContext.content}} />
-            </ContentContainer>
+            </ContentContainer> */}
     
     </Layout>
 )

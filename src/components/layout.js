@@ -39,11 +39,11 @@ const Layout = ({ children }) => (
         }
       }
     `} render={props => <Helmet><title>Conrad Casper</title><link rel="icon" href={props.allWordpressWpFavicon.edges[0].node.url.source_url} /></Helmet>} />
-    <GlobalStyles />
     <NavBar/>
-    <LayoutWrapper>
+    <GlobalStyles />
+    {/* <LayoutWrapper>
       {children}
-    </LayoutWrapper>
+    </LayoutWrapper> */}
     
   </>
 )
