@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import styled, { keyframes } from 'styled-components';
+import SEO from '../components/seo';
 
 const headerFadeIn = keyframes`
     0% {
@@ -61,7 +62,7 @@ const Content = styled.div`
 
 export default ({ pageContext }) => (
     <Layout>
-        
+        <SEO title="Home" />
             <ContentContainer>
                 <Header dangerouslySetInnerHTML={{__html: pageContext.acf.header}}/>
                 <Content dangerouslySetInnerHTML={{__html: pageContext.content}} />

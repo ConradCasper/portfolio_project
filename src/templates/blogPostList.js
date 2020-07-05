@@ -2,6 +2,7 @@ import React from 'react';
 import Layout from '../components/layout';
 import { Link } from 'gatsby';
 import styled from 'styled-components';
+import SEO from '../components/seo';
 
 const Pagination = styled.div`
     display: flex;
@@ -21,6 +22,7 @@ const PageNumber = styled(Link)`
 
 export default ({ pageContext }) => (
     <Layout>
+        <SEO title="Blog"/> 
          {pageContext.posts.map(post => (
              <div key={post.node.wordpress_id}>
                  <h3 dangerouslySetInnerHTML={{__html: post.node.title}}/>

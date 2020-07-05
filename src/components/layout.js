@@ -38,7 +38,7 @@ const Layout = ({ children }) => (
           }
         }
       }
-    `} render={props => <Helmet><title>Conrad Casper</title><link rel="icon" href={props.allWordpressWpFavicon.edges[0].node.url.source_url} /></Helmet>} />
+    `} render={props => <Helmet><link rel="icon" href={props.allWordpressWpFavicon.edges[0].node.url.source_url} /></Helmet>} />
     <NavBar/>
     <GlobalStyles />
     <LayoutWrapper>

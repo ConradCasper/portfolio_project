@@ -1,7 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
 import styled from 'styled-components'
-
+import SEO from '../components/seo';
 // const FeaturedImage = styled.img`
 //     max-width: 300px;
 //     margin: 16px 0;
@@ -30,6 +30,7 @@ const YouTubeEmbedResponsive = styled.div`
 
 export default ({ pageContext }) => (
     <Layout>
+        <SEO  title={pageContext.title} />
         <h1>
             {pageContext.title}
         </h1>
