@@ -9,7 +9,7 @@ const SiteLogo = styled.img`
     padding: 0 16px;
 `
 const HomeLink = styled(Link)`
-
+  max-height: 35px;
 `
 
 

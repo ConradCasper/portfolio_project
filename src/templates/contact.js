@@ -2,71 +2,140 @@ import React from 'react';
 import Layout from '../components/layout';
 import styled, { keyframes } from 'styled-components';
 import SEO from '../components/seo';
+import { Github } from '@styled-icons/boxicons-logos/Github';
+import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
+import { Twitter } from '@styled-icons/boxicons-logos/Twitter';
+import { StackOverflow } from '@styled-icons/boxicons-logos/StackOverflow';
 
-// const headerFadeIn = keyframes`
-//     0% {
-//         opacity: 0;
-//         transform: translateX(100px);
-//     }
-//     100% {
-//         opacity: 1;
-//         transform: translateX(0);
-//     }
-// `
 
 const contentFadeIn = keyframes`
     0% {
         opacity: 0;
-        transform: translateX(-100px);
+        transform: translateY(100px);
     }
     
     100% {
         opacity: 1;
-        transform: translateX(0);
+        transform: translateY(0);
     }
 `
 
-
-
-// const ProfileImage = styled.img`
-//     max-width: 235px;
-//     margin: 0;
-//     padding: 0px 16px 16px 0px;
-//     float: left;
-// `
-
 const ContentContainer = styled.div`
     max-width: 650px;
-    backspace-visibility: hidden;
+    animation: 2s ${contentFadeIn} ease-out;
     margin: 0 auto;
     text-align: center;
 `
 
-// const Header = styled.h1`
-//     margin-bottom: 0;
-//     font-size: 50px;
-//     animation: 2s ${headerFadeIn} ease-out;
-    
-// `
 
-const Content = styled.div`
-    font-size: 25px;
-    margin: 0;
-    animation: 2s ${contentFadeIn} ease-out;
-    
-    p {
-        margin-top: 0;
+// ------------------------------------- Linkedin ------------------------------------------------
+
+const linkedInHover = keyframes`
+    0% {
+        color: black;
+    }
+
+    100% {
+        color: #0077b5;
     }
 `
+
+
+const Linkedin = styled(LinkedinSquare)`
+    max-width: 300px;
+    color: black;
+
+    :hover {
+        animation: ${linkedInHover} 1s forwards;
+    }
+`
+// ------------------------------ Github --------------------------------------------
+
+
+const githubHover = keyframes`
+    0% {
+        color: black;
+    }
+
+    100% {
+        color: #7E7B7A;
+    }
+`
+
+const GithubLink = styled(Github)`
+max-width: 300px;
+    color: black;
+
+    :hover {
+        animation: ${githubHover} 1s forwards;
+    }
+`
+// -------------------------------- Twitter ---------------------------------------
+
+const twitterHover = keyframes`
+    0% {
+        color: black;
+    }
+
+    100% {
+        color: #0077b5;
+    }
+`
+
+const TwitterLink = styled(Twitter)`
+    max-width: 300px;
+    color: black;
+
+    :hover {
+        animation: ${twitterHover} 1s forwards;
+    }
+`
+
+// -------------------------------------- Stack Overflow -------------------------------
+
+const stackHover = keyframes`
+    0% {
+        color: black;
+    }
+
+    100% {
+        color: #FF792B;
+    }
+`
+
+const StackLink = styled(StackOverflow)`
+    max-width: 300px;
+    color: black;
+
+    :hover {
+        animation: ${stackHover} 1s forwards;
+    }
+`
+
+
+
+
+
 
 
 export default ({ pageContext }) => (
     <Layout>
         <SEO title="Contact" />
             <ContentContainer>
-                {/* <Header dangerouslySetInnerHTML={{__html: pageContext.acf.header}}/> */}
-                <Content dangerouslySetInnerHTML={{__html: pageContext.content}} />
+                <a href="https://www.linkedin.com/in/conradcasper/">
+                    <Linkedin />
+                </a>
+                <a href="https://github.com/ConradCasper">
+                    <GithubLink />
+                </a>
+                <a href="https://twitter.com/Conrad_Casper">
+                    <TwitterLink />
+                </a>
+                <a href="https://stackoverflow.com/users/10720310/conrad-casper">
+                    <StackLink />
+                </a>
             </ContentContainer>
-    
     </Layout>
-)
+);
+                
+    
