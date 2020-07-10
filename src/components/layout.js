@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
     margin: 0 !important;
     padding: 0 !important;
     background: white;
-    height: 100vh;
+    height: 100%;
   }
 `
 
@@ -22,10 +22,10 @@ const LayoutWrapper = styled.div`
   position: relative;
   background-image: linear-gradient(65deg, rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1),rgba(128, 0, 0, 0.8), rgba(128, 0, 0, 0.9));
   padding: 1em;
-  height: 100vh;
+  min-height: 100%;
 
   @media (max-width: 768px){
-    height: 100%;
+    min-height: 100%;
   }
 `
 

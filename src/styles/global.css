@@ -5,21 +5,18 @@
  * div with role="group"
 */
 
-/* html, body, #___gatsby {
+#___gatsby {
     height: 100%;
 }
 
-body {
-    margin: 0px;
+html {
     height: 100%;
-} */
+}
 
 #gatsby-focus-wrapper {
     height: 100%;
 }
 
-/* div[role="group"][tabindex] {
-    display: flex;
-    flex-direction: column;
-    flex-grow: 1;
-} */
+div[role="group"][tabindex] {
+    height: 100%;
+}

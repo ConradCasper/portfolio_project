@@ -6,7 +6,6 @@ const PortfolioItemsWrapper = styled.div`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    
 `
 
 const PortfolioItem = styled.div`
