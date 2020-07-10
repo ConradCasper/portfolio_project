@@ -28,33 +28,42 @@ const contentFadeIn = keyframes`
 
 
 
-// const ProfileImage = styled.img`
-//     max-width: 235px;
-//     margin: 0;
-//     padding: 0px 16px 16px 0px;
-//     float: left;
-// `
+
 
 const ContentContainer = styled.div`
     max-width: 650px;
-    backspace-visibility: hidden;
     margin: 0 auto;
     text-align: center;
+    width: 100%;
+    // 
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
 `
 
 const Header = styled.h1`
     margin-bottom: 0;
-    font-size: 50px;
+    font-size: 100px;
     color: white;
     animation: 2s ${headerFadeIn} ease-out;
+
+    @media (max-width: 768px) {
+        font-size: 50px;
+    }
     
 `
 
 const Content = styled.div`
-    font-size: 25px;
+    font-size: 50px;
     color: white;
     margin: 0;
     animation: 2s ${contentFadeIn} ease-out;
+
+    @media (max-width: 768px) {
+        font-size: 25px;
+    }
     
     p {
         margin-top: 0;

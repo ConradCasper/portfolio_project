@@ -19,7 +19,7 @@ const LayoutWrapper = styled.div`
   margin: 0 auto;
   position: relative;
   // background: #ffffff;
-  background-image: linear-gradient(55deg, rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1),rgba(128, 0, 0, 0.8), rgba(128, 0, 0, 0.9));
+  background-image: linear-gradient(65deg, rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1),rgba(128, 0, 0, 0.8), rgba(128, 0, 0, 0.9));
   padding: 1em;
   // margin-top: 25px;
   height: 100vh;
