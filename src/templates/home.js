@@ -117,7 +117,6 @@ const TaglineContactContainer = styled.div`
 
 
 const Contact = styled(Link)`
-    // text-decoration: none;
     color: white;
     font-size: 25px;
     padding: 25px 25px;

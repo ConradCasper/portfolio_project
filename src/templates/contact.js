@@ -8,7 +8,43 @@ import { Twitter } from '@styled-icons/boxicons-logos/Twitter';
 import { StackOverflow } from '@styled-icons/boxicons-logos/StackOverflow';
 
 
-const contentFadeIn = keyframes`
+const linkedinFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+const githubFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+const stackFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+const twitterFadeIn = keyframes`
     0% {
         opacity: 0;
         transform: translateY(100px);
@@ -22,9 +58,16 @@ const contentFadeIn = keyframes`
 
 const ContentContainer = styled.div`
     max-width: 650px;
-    animation: 2s ${contentFadeIn} ease-out;
+    
     margin: 0 auto;
     text-align: center;
+    width: 100%;
+
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    /* bring your own prefixes */
+    transform: translate(-50%, -50%);
 `
 
 
@@ -32,7 +75,7 @@ const ContentContainer = styled.div`
 
 const linkedInHover = keyframes`
     0% {
-        color: black;
+        color: white;
     }
 
     100% {
@@ -43,9 +86,10 @@ const linkedInHover = keyframes`
 
 const Linkedin = styled(LinkedinSquare)`
     max-width: 300px;
-    color: black;
+    color: white;
+    animation: 2s ${linkedinFadeIn} ease-out;
 
-    :hover, :active {
+    :hover {
         animation: ${linkedInHover} 1s forwards;
     }
 `
@@ -54,7 +98,7 @@ const Linkedin = styled(LinkedinSquare)`
 
 const githubHover = keyframes`
     0% {
-        color: black;
+        color: white;
     }
 
     100% {
@@ -64,7 +108,8 @@ const githubHover = keyframes`
 
 const GithubLink = styled(Github)`
 max-width: 300px;
-    color: black;
+    color: white;
+    animation: 2s ${githubFadeIn} ease-out;
 
     :hover {
         animation: ${githubHover} 1s forwards;
@@ -74,7 +119,7 @@ max-width: 300px;
 
 const twitterHover = keyframes`
     0% {
-        color: black;
+        color: white;
     }
 
     100% {
@@ -84,7 +129,8 @@ const twitterHover = keyframes`
 
 const TwitterLink = styled(Twitter)`
     max-width: 300px;
-    color: black;
+    color: white;
+    animation: 2s ${twitterFadeIn} ease-out;
 
     :hover {
         animation: ${twitterHover} 1s forwards;
@@ -95,7 +141,7 @@ const TwitterLink = styled(Twitter)`
 
 const stackHover = keyframes`
     0% {
-        color: black;
+        color: white;
     }
 
     100% {
@@ -105,7 +151,8 @@ const stackHover = keyframes`
 
 const StackLink = styled(StackOverflow)`
     max-width: 300px;
-    color: black;
+    color: white;
+    animation: 2s ${stackFadeIn} ease-out forwards;
 
     :hover {
         animation: ${stackHover} 1s forwards;
