@@ -5,12 +5,14 @@ import { Helmet } from "react-helmet"
 import { StaticQuery, graphql } from 'gatsby';
 
 
+
 const GlobalStyles = createGlobalStyle`
   body{
     font-family: 'Avenir Next', sans-serif;
     margin: 0 !important;
     padding: 0 !important;
     background: white;
+    height: 100vh;
   }
 `
 
@@ -20,8 +22,11 @@ const LayoutWrapper = styled.div`
   position: relative;
   background-image: linear-gradient(65deg, rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1),rgba(128, 0, 0, 0.8), rgba(128, 0, 0, 0.9));
   padding: 1em;
-  // margin-top: 25px;
   height: 100vh;
+
+  @media (max-width: 768px){
+    height: 100%;
+  }
 `
 
 const Layout = ({ children }) => (

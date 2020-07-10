@@ -1,0 +1,25 @@
+/* 
+ * Purpose:
+ * Assign height: "100%" to
+ * html, body, #___gatsby &  
+ * div with role="group"
+*/
+
+/* html, body, #___gatsby {
+    height: 100%;
+}
+
+body {
+    margin: 0px;
+    height: 100%;
+} */
+
+#gatsby-focus-wrapper {
+    height: 100%;
+}
+
+/* div[role="group"][tabindex] {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+} */
