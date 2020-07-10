@@ -45,7 +45,7 @@ const Linkedin = styled(LinkedinSquare)`
     max-width: 300px;
     color: black;
 
-    :hover {
+    :hover, :active {
         animation: ${linkedInHover} 1s forwards;
     }
 `

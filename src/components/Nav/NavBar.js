@@ -8,6 +8,7 @@ const NavBarWrapper = styled.div`
     background-color: white;
     box-shadow: 0px -4px 26px 2px rgba(194,194,194,1);
     height: 65px;
+    z-index: 5;
 `
 
 const NavBarInner = styled.div`

@@ -45,12 +45,14 @@ const ContentContainer = styled.div`
 const Header = styled.h1`
     margin-bottom: 0;
     font-size: 50px;
+    color: white;
     animation: 2s ${headerFadeIn} ease-out;
     
 `
 
 const Content = styled.div`
     font-size: 25px;
+    color: white;
     margin: 0;
     animation: 2s ${contentFadeIn} ease-out;
     
