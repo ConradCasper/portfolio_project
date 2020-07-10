@@ -79,7 +79,7 @@ const linkedInHover = keyframes`
     }
 
     100% {
-        color: #0077b5;
+        color: black;
     }
 `
 
@@ -90,7 +90,7 @@ const Linkedin = styled(LinkedinSquare)`
     animation: 2s ${linkedinFadeIn} ease-out;
 
     :hover {
-        animation: ${linkedInHover} 1s forwards;
+        animation: 2s ${linkedinFadeIn} ease-out, ${linkedInHover} 1s forwards;
     }
 `
 // ------------------------------ Github --------------------------------------------
@@ -102,7 +102,7 @@ const githubHover = keyframes`
     }
 
     100% {
-        color: #7E7B7A;
+        color: black;
     }
 `
 
@@ -112,7 +112,7 @@ max-width: 300px;
     animation: 2s ${githubFadeIn} ease-out;
 
     :hover {
-        animation: ${githubHover} 1s forwards;
+        animation: 2s ${githubFadeIn} ease-out, ${githubHover} 1s forwards;
     }
 `
 // -------------------------------- Twitter ---------------------------------------
@@ -123,7 +123,7 @@ const twitterHover = keyframes`
     }
 
     100% {
-        color: #0077b5;
+        color: black;
     }
 `
 
@@ -133,7 +133,7 @@ const TwitterLink = styled(Twitter)`
     animation: 2s ${twitterFadeIn} ease-out;
 
     :hover {
-        animation: ${twitterHover} 1s forwards;
+        animation: 2s ${twitterFadeIn} ease-out, ${twitterHover} 1s forwards;
     }
 `
 
@@ -145,17 +145,17 @@ const stackHover = keyframes`
     }
 
     100% {
-        color: #FF792B;
+        color: black;
     }
 `
 
 const StackLink = styled(StackOverflow)`
     max-width: 300px;
     color: white;
-    animation: 2s ${stackFadeIn} ease-out forwards;
+    animation: 2s ${stackFadeIn} ease-out;
 
     :hover {
-        animation: ${stackHover} 1s forwards;
+        animation: 2s ${stackFadeIn} ease-out, ${stackHover} 1s forwards;
     }
 `
 
