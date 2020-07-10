@@ -1,6 +1,7 @@
 import React from 'react';
 import Layout from '../components/layout';
 import styled, { keyframes } from 'styled-components';
+import { Link } from 'gatsby';
 import SEO from '../components/seo';
 
 const headerFadeIn = keyframes`
@@ -23,6 +24,30 @@ const contentFadeIn = keyframes`
     100% {
         opacity: 1;
         transform: translateX(0);
+    }
+`
+
+const taglineFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        // transform: translateX(-100px);
+    }
+    
+    100% {
+        opacity: 1;
+        // transform: translateX(0);
+    }
+`
+
+const contactFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        
+    }
+    
+    100% {
+        opacity: 1;
+        
     }
 `
 
@@ -66,7 +91,43 @@ const Content = styled.div`
     }
     
     p {
-        margin-top: 0;
+        margin: 0;
+    }
+`
+const Tagline = styled.p`
+    font-size: 25px;
+    color: white;
+    margin: 0;
+    animation: 2s ${taglineFadeIn};
+    animation-delay: 4s;
+    animation-fill-mode: backwards;
+    padding: 25px 25px;
+    
+
+    @media (max-width: 768px) {
+        font-size: 12.5px;
+    }
+`
+
+const TaglineContactContainer = styled.div`
+    height: 75px;
+    display: flex;
+    justify-content: center;
+`
+
+
+const Contact = styled(Link)`
+    // text-decoration: none;
+    color: white;
+    font-size: 25px;
+    padding: 25px 25px;
+
+    animation: 2s ${contactFadeIn};
+    animation-delay: 6s;
+    animation-fill-mode: backwards;
+
+    @media (max-width: 768px){
+        font-size: 12.5px;
     }
 `
 
@@ -77,6 +138,10 @@ export default ({ pageContext }) => (
             <ContentContainer>
                 <Header dangerouslySetInnerHTML={{__html: pageContext.acf.header}}/>
                 <Content dangerouslySetInnerHTML={{__html: pageContext.content}} />
+                <TaglineContactContainer>
+                    <Tagline dangerouslySetInnerHTML={{__html:pageContext.acf.tagline}} />
+                    <Contact to="/contact">Contact me.</Contact>
+                </TaglineContactContainer>
             </ContentContainer>
     
     </Layout>
