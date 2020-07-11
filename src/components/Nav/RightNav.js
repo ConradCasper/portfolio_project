@@ -16,24 +16,39 @@ const NavItemWrapper = styled.div`
         right: 0;
         height: 100vh;
         width: 100%;
-        padding-top: 3.5rem;
+        padding-top: 6rem;
         transition: transform 0.3s ease-in-out;
         z-index: 10;
-        background: rgb(15,15,15);
-        background: linear-gradient(312deg, rgba(15,15,15,1) 0%, rgba(89,89,89,1) 48%, rgba(240,240,245,1) 100%);
+        background: dimgray;
+        // background: linear-gradient(312deg, rgba(15,15,15,1) 0%, rgba(89,89,89,1) 48%, rgba(240,240,245,1) 100%);
 
         a{
             color: white;
-            align-self: center;
-            width: 50%;
-            border-bottom: 2px solid black;
-            padding: 16px 32px;
-            text-decoration: bold;
-            font-family: Arial;
-            font-size: 35px;
+            text-align: right;
+            align-self: flex-end;
+            width: auto;
+            padding: 16px 50px;
+            overflow: hidden;
+            text-decoration: none;
+        }
+
+        .top {
+          width: 100%;
+          height: 2px;
+          background: white;
+          border-radius: 10px;
+        }
+
+        .bottom {
+          width: 100%;
+          height: 2px;
+          background: white;
+          border-radius: 10px;
         }
     }
 `;
+
+
 
 const NavItem = styled(Link)`
     color: #728792;
@@ -65,16 +80,30 @@ const RightNav = ({ open }) => (
     `} render={props => (
         <NavItemWrapper open={open}>
             {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
+
+              item.object_slug === 'home' ? 
+                <>
+                  <div className="top" />
+                  <NavItem to={`/${item.object_slug}`} key={item.title} className="home">
+                    {item.title}
+                  </NavItem>
+                  <div  className="bottom" />
+                </>
+              : 
+                <>
+                  <NavItem to={`/${item.object_slug}`} key={item.title}>
+                    {item.title}
+                  </NavItem>
+                  <div  className="bottom" />
+                </>
             
-            <NavItem to={`/${item.object_slug}`} key={item.title}>
-                {item.title}
-            </NavItem>
-
-        ))}
-        </NavItemWrapper>
-        
-        )}/>
-        
+            ))}
+            </NavItemWrapper>
+            
+            )}/>
+            
 )
-
-export default RightNav;
+    
+    export default RightNav;
+            
+            
