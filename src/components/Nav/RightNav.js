@@ -10,7 +10,6 @@ const NavItemWrapper = styled.div`
 
     @media (max-width: 768px) {
         flex-flow: column nowrap;
-        background: white;
         position: fixed;
         transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
         top: 0;
@@ -20,10 +19,14 @@ const NavItemWrapper = styled.div`
         padding-top: 3.5rem;
         transition: transform 0.3s ease-in-out;
         z-index: 10;
+        background: rgb(15,15,15);
+        background: linear-gradient(312deg, rgba(15,15,15,1) 0%, rgba(89,89,89,1) 48%, rgba(240,240,245,1) 100%);
 
         a{
-            color: black;
-            display: block;
+            color: white;
+            align-self: center;
+            width: 50%;
+            border-bottom: 2px solid black;
             padding: 16px 32px;
             text-decoration: bold;
             font-family: Arial;
