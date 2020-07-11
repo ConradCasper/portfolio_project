@@ -1,13 +1,32 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
+
+
+
+
+
+const animatedgradient = keyframes`
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+`
 
 
 const NavItemWrapper = styled.div`
+
+
     display: flex;
     flex-flow: row nowrap;
-    
 
+    
+    
     @media (max-width: 768px) {
         flex-flow: column nowrap;
         position: fixed;
@@ -15,47 +34,56 @@ const NavItemWrapper = styled.div`
         top: 0;
         right: 0;
         height: 100vh;
-        width: 100%;
-        padding-top: 6rem;
+        width: 45%;
+        padding-top: 10rem;
         transition: transform 0.3s ease-in-out;
         z-index: 10;
-        background: dimgray;
-        // background: linear-gradient(312deg, rgba(15,15,15,1) 0%, rgba(89,89,89,1) 48%, rgba(240,240,245,1) 100%);
+        background: rgba(29, 31, 32, 1);
 
         a{
             color: white;
             text-align: right;
             align-self: flex-end;
             width: auto;
-            padding: 16px 50px;
-            overflow: hidden;
+            padding: 16px 25px;
             text-decoration: none;
+            font-size: 20px;
         }
 
-        .top {
+        .gradient-border {
+          --borderWidth: 1px;
+          background: #1D1F20;
+          position: relative;
+          border-radius: var(--borderWidth);
+          visibility: ${({ open }) => open ? 'visible' : 'hidden'};
+        }
+        .gradient-border:after {
+          content: '';
+          position: absolute;
+          top: calc(-1 * var(--borderWidth));
+          left: calc(-1 * var(--borderWidth));
+          height: calc(100% + var(--borderWidth) * 2);
           width: 100%;
-          height: 2px;
-          background: white;
-          border-radius: 10px;
+          background: linear-gradient(60deg, #f79533, #f37055, #ef4e7b, #a166ab, #5073b8, #1098ad, #07b39b, #6fba82);
+          border-radius: calc(2 * var(--borderWidth));
+          z-index: -1;
+          animation: ${animatedgradient} 3s ease alternate infinite;
+          background-size: 300% 300%;
         }
 
-        .bottom {
-          width: 100%;
-          height: 2px;
-          background: white;
-          border-radius: 10px;
-        }
+        
     }
 `;
 
 
 
 const NavItem = styled(Link)`
-    color: #728792;
-    display: block;
-    padding: 8px 16px;
-    text-decoration: none;
+  color: #728792;
+  display: block;
+  padding: 8px 16px;
+  text-decoration: none;
 `
+
 
 
 const RightNav = ({ open }) => (
@@ -82,20 +110,20 @@ const RightNav = ({ open }) => (
             {props.allWordpressWpApiMenusMenusItems.edges[0].node.items.map(item => (
 
               item.object_slug === 'home' ? 
-                <>
-                  <div className="top" />
-                  <NavItem to={`/${item.object_slug}`} key={item.title} className="home">
+                <Fragment key={item.title}>
+                  <div className="gradient-border" />
+                  <NavItem to={`/${item.object_slug}`}  className="home">
                     {item.title}
                   </NavItem>
-                  <div  className="bottom" />
-                </>
+                  <div  className="gradient-border" />
+                </Fragment>
               : 
-                <>
-                  <NavItem to={`/${item.object_slug}`} key={item.title}>
+                <Fragment key={item.title}>
+                  <NavItem to={`/${item.object_slug}`} >
                     {item.title}
                   </NavItem>
-                  <div  className="bottom" />
-                </>
+                  <div  className="gradient-border" />
+                </Fragment>
             
             ))}
             </NavItemWrapper>
