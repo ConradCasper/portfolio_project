@@ -8,7 +8,7 @@ import RightNav from './RightNav';
 const StyledBurger = styled.div`
     width: 2rem;
     height: 2rem;
-    padding: 0 16px;
+    padding: 0 8px;
     
     z-index: 20;
     display: none;

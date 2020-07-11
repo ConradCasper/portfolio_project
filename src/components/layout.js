@@ -14,6 +14,9 @@ const GlobalStyles = createGlobalStyle`
     background: white;
     height: 100%;
     color: white;
+    // *{
+    //   outline: 1px solid red;
+    // }
   }
 `
 

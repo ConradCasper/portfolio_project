@@ -45,9 +45,10 @@ const NavItemWrapper = styled.div`
             text-align: right;
             align-self: flex-end;
             width: auto;
-            padding: 16px 25px;
+            padding: 16px 50px;
             text-decoration: none;
             font-size: 20px;
+            text-align: center;
         }
 
         .gradient-border {
