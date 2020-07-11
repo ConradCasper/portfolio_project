@@ -13,6 +13,7 @@ const GlobalStyles = createGlobalStyle`
     padding: 0 !important;
     background: white;
     height: 100%;
+    color: white;
   }
 `
 

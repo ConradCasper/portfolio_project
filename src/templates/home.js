@@ -98,7 +98,7 @@ const Tagline = styled.p`
     color: white;
     margin: 0;
     animation: 2s ${taglineFadeIn};
-    animation-delay: 3s;
+    animation-delay: 2.5s;
     animation-fill-mode: backwards;
     padding: 25px 25px;
     
