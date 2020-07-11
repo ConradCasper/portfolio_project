@@ -5,26 +5,11 @@ import PortfolioItems from '../components/PortfolioItems'
 import SEO from '../components/seo';
 
 
-// const ContentWrapper = styled.div`
-//     max-width: 650px;
-//     margin: 0 auto;
-//     text-align: center;
-//     width: 100%;
-//     // 
-//     position: absolute;
-//     top: 50%;
-//     left: 50%;
-//     /* bring your own prefixes */
-//     transform: translate(-50%, -50%);
-// `
 
 export default ({ pageContext }) => (
     <Layout>
         <SEO title={pageContext.title} /> 
         <h1 dangerouslySetInnerHTML={{__html: pageContext.title}} />
-        
-        {/* <ProfileImage src={pageContext.featured_media.source_url} />
-        <div dangerouslySetInnerHTML={{__html: pageContext.content}}/> */}
         <PortfolioItems />
     </Layout>
 )
