@@ -57,18 +57,27 @@ const twitterFadeIn = keyframes`
 `
 
 const ContentContainer = styled.div`
-    max-width: 650px;
-    
-    margin: 0 auto;
+    // max-width: 650px;
+    // margin: 0 auto;
     text-align: center;
-    width: 100%;
+    // width: 100%;
+    // position: absolute;
+    // top: 50%;
+    // left: 50%;
+    // transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    
 
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    /* bring your own prefixes */
-    transform: translate(-50%, -50%);
+    @media (max-width: 768px) {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
 `
+    
+    
 
 
 // ------------------------------------- Linkedin ------------------------------------------------
@@ -87,6 +96,7 @@ const linkedInHover = keyframes`
 const Linkedin = styled(LinkedinSquare)`
     max-width: 300px;
     color: white;
+    align-self: center;
     animation: 2s ${linkedinFadeIn} ease-out;
 
     :hover {
@@ -109,6 +119,7 @@ const githubHover = keyframes`
 const GithubLink = styled(Github)`
 max-width: 300px;
     color: white;
+    align-self: center;
     animation: 2s ${githubFadeIn} ease-out;
 
     :hover {
@@ -130,6 +141,7 @@ const twitterHover = keyframes`
 const TwitterLink = styled(Twitter)`
     max-width: 300px;
     color: white;
+    align-self: center;
     animation: 2s ${twitterFadeIn} ease-out;
 
     :hover {
@@ -152,6 +164,7 @@ const stackHover = keyframes`
 const StackLink = styled(StackOverflow)`
     max-width: 300px;
     color: white;
+    align-self: center;
     animation: 2s ${stackFadeIn} ease-out;
 
     :hover {

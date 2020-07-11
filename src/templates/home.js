@@ -60,13 +60,12 @@ const ContentContainer = styled.div`
     margin: 0 auto;
     text-align: center;
     width: 100%;
-    // 
     position: absolute;
     top: 50%;
     left: 50%;
-    /* bring your own prefixes */
     transform: translate(-50%, -50%);
 `
+    
 
 const Header = styled.h1`
     margin-bottom: 0;
@@ -99,7 +98,7 @@ const Tagline = styled.p`
     color: white;
     margin: 0;
     animation: 2s ${taglineFadeIn};
-    animation-delay: 4s;
+    animation-delay: 3s;
     animation-fill-mode: backwards;
     padding: 25px 25px;
     
@@ -122,7 +121,7 @@ const Contact = styled(Link)`
     padding: 25px 25px;
 
     animation: 2s ${contactFadeIn};
-    animation-delay: 6s;
+    animation-delay: 4s;
     animation-fill-mode: backwards;
 
     @media (max-width: 768px){
