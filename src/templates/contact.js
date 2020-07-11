@@ -57,23 +57,27 @@ const twitterFadeIn = keyframes`
 `
 
 const ContentContainer = styled.div`
-    // max-width: 650px;
-    // margin: 0 auto;
+    max-width: 650px;
+    margin: 0 auto;
     text-align: center;
-    // width: 100%;
-    // position: absolute;
-    // top: 50%;
-    // left: 50%;
-    // transform: translate(-50%, -50%);
-    display: flex;
-    justify-content: center;
-    flex-direction: row;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     
 
     @media (max-width: 768px) {
         display: flex;
         flex-direction: column;
         justify-content: center;
+
+        
+        // this enables all the flex properties to take over?? idk it works though!
+        position: unset;
+        top: unset;
+        left: unset;
+        transform: unset;
     }
 `
     

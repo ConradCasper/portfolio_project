@@ -28,8 +28,8 @@ export default ({ pageContext }) => (
         <SEO title={pageContext.title} /> 
         <h1 dangerouslySetInnerHTML={{__html: pageContext.title}} />
         
-        {/* <ProfileImage src={pageContext.featured_media.source_url} />
+        <ProfileImage src={pageContext.featured_media.source_url} />
         <div dangerouslySetInnerHTML={{__html: pageContext.content}}/>
-        <PortfolioItems /> */}
+        <PortfolioItems />
     </Layout>
 )
