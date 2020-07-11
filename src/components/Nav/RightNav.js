@@ -34,7 +34,7 @@ const NavItemWrapper = styled.div`
         top: 0;
         right: 0;
         height: 100vh;
-        width: 45%;
+        width: 100%;
         padding-top: 10rem;
         transition: transform 0.3s ease-in-out;
         z-index: 10;
