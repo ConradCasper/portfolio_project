@@ -121,7 +121,7 @@ const githubHover = keyframes`
 `
 
 const GithubLink = styled(Github)`
-max-width: 300px;
+    max-width: 300px;
     color: white;
     align-self: center;
     animation: 2s ${githubFadeIn} ease-out;

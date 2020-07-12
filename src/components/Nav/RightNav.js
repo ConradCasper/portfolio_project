@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react';
 import { graphql, StaticQuery, Link } from 'gatsby';
 import styled, { keyframes } from 'styled-components';
+import ContactWidget from '../ContactWidget'
 
 
 
@@ -87,7 +88,7 @@ const NavItem = styled(Link)`
 
 
 
-const RightNav = ({ open }) => (
+const RightNav = ({ open, setOpen }) => (
     <StaticQuery query={graphql`
     {
         allWordpressWpApiMenusMenusItems(filter: {
@@ -113,20 +114,21 @@ const RightNav = ({ open }) => (
               item.object_slug === 'home' ? 
                 <Fragment key={item.title}>
                   <div className="gradient-border" />
-                  <NavItem to={`/${item.object_slug}`}  className="home">
+                  <NavItem to={`/${item.object_slug}`}  className="home" onClick={() => setOpen(!open)}>
                     {item.title}
                   </NavItem>
                   <div  className="gradient-border" />
                 </Fragment>
               : 
                 <Fragment key={item.title}>
-                  <NavItem to={`/${item.object_slug}`} >
+                  <NavItem to={`/${item.object_slug}`} onClick={() => setOpen(!open)} >
                     {item.title}
                   </NavItem>
                   <div  className="gradient-border" />
                 </Fragment>
             
             ))}
+            <ContactWidget />
             </NavItemWrapper>
             
             )}/>
