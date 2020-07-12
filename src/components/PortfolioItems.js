@@ -50,7 +50,8 @@ const PortfolioImage = styled.img`
 
 const ReadMoreLink = styled(Link)`
   text-decoration: none;
-  background: rgba(0,0,0, 0.3);
+  // background: rgba(0,0,0, 0.3);
+  background: #8B0000;
   color: white;
   border-radius: 5px;
   padding: 8px 8px;
@@ -62,7 +63,7 @@ const ReadMoreLink = styled(Link)`
     box-shadow: inset 0px 1px 22px 1px rgba(255,255,255,0.29);
   }
 
-  @media (max-width: 678px){
+  @media (max-width: 768px){
     background: rgba(255, 150, 0, 1);
   }
 `

@@ -1,7 +1,8 @@
 import React from 'react'
 import Layout from '../components/layout'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import SEO from '../components/seo';
+import { Link } from 'gatsby';
 
 
 
@@ -25,6 +26,33 @@ const PortfolioImage = styled.img`
     width: 100%;
 `
 
+const liveSiteFillIn = keyframes`
+    0% {
+        background: rgba(0,0,0, 0.3);
+    }
+    
+    100% {
+        background: red;
+    }
+`
+
+
+const SiteLink = styled(Link)`
+text-decoration: none;
+background: #8B0000;
+color: white;
+border-radius: 5px;
+padding: 8px 8px;
+margin-bottom: 10px;
+display: inline-block;
+
+&:hover {
+  animation: 0.3s ${liveSiteFillIn} linear forwards;
+  -webkit-box-shadow: inset 0px 1px 22px 1px rgba(255,255,255,0.29);
+  -moz-box-shadow: inset 0px 1px 22px 1px rgba(255,255,255,0.29);
+  box-shadow: inset 0px 1px 22px 1px rgba
+`
+
 
 
 
@@ -38,11 +66,11 @@ export default ({ pageContext }) => (
         {pageContext.acf.portfolio_url !== "" ? 
             <>
                 
-                <a href={pageContext.acf.portfolio_url} target="_blank" rel="noopener noreferrer" style={{'color': 'white'}}>
-                    <strong>
-                        Live Site 
-                    </strong>
-                </a>
+                <SiteLink href={pageContext.acf.portfolio_url} target="_blank" rel="noopener noreferrer" >
+                    {/* <strong> */}
+                        Visit live site 
+                    {/* </strong> */}
+                </SiteLink>
                 <PortfolioImage src={pageContext.featured_media.source_url} />
             </>
 

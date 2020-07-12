@@ -96,7 +96,7 @@ const Tagline = styled.p`
     color: white;
     margin: 0;
     animation: 2s ${taglineFadeIn};
-    animation-delay: 2.5s;
+    animation-delay: 1s;
     animation-fill-mode: backwards;
     padding: 25px 25px;
     
@@ -119,7 +119,7 @@ const Contact = styled(Link)`
     padding: 25px 25px;
 
     animation: 2s ${contactFadeIn};
-    animation-delay: 4s;
+    animation-delay: 1.5s;
     animation-fill-mode: backwards;
 
     @media (max-width: 768px){
