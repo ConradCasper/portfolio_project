@@ -6,7 +6,8 @@ import styled from 'styled-components';
 const SiteLogo = styled.img`
     width: 35px;
     height: 35px;
-    padding: 0 16px;
+    margin: 0 0 0 16px;
+    border-radius: 3px;
 `
 const HomeLink = styled(Link)`
   max-height: 35px;

@@ -7,6 +7,8 @@ import SEO from '../components/seo';
 const Pagination = styled.div`
     display: flex;
     justify-content: flex-end;
+    bottom: 0;
+    position: absolute;
 `
 
 const PageNumberWrapper = styled.div`

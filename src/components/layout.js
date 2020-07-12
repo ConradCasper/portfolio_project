@@ -7,6 +7,7 @@ import { StaticQuery, graphql } from 'gatsby';
 
 
 const GlobalStyles = createGlobalStyle`
+
   body{
     font-family: 'Avenir Next', sans-serif;
     margin: 0 !important;
@@ -24,8 +25,7 @@ const LayoutWrapper = styled.div`
   max-width: 960px;
   margin: 0 auto;
   position: relative;
-  // background-image: linear-gradient(65deg, rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1),rgba(128, 0, 0, 0.8), rgba(128, 0, 0, 0.9));
-  background-image: linear-gradient(65deg, rgba(29, 31, 32, 1), rgba(29, 31, 32, 1), rgba(29, 31, 32, 1), rgba(29, 31, 32, 1), rgba(29, 31, 32, 1),rgba(128, 0, 0, 0.8), rgba(128, 0, 0, 0.9));
+  background-image: linear-gradient(65deg, rgba(29, 31, 32, 1), rgba(29, 31, 32, 1), rgba(29, 31, 32, 1), rgba(29, 31, 32, 1), rgba(29, 31, 32, 1),rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1));
   padding: 1em;
   min-height: 100%;
 
@@ -49,7 +49,7 @@ const Layout = ({ children }) => (
           }
         }
       }
-    `} render={props => <Helmet><link rel="icon" href={props.allWordpressWpFavicon.edges[0].node.url.source_url} /></Helmet>} />
+    `} render={props => <Helmet><link rel="icon" href={props.allWordpressWpFavicon.edges[0].node.url.source_url}  /></Helmet>} />
     <NavBar/>
     <GlobalStyles />
     <LayoutWrapper>
