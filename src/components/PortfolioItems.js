@@ -48,6 +48,7 @@ const PortfolioItem = styled.div`
 
 const PortfolioImage = styled.img`
     max-width: 100%;
+    height: autho;
 `
 
 const ReadMoreLink = styled(Link)`

@@ -14,7 +14,7 @@ const BlogPostItemsWrapper = styled.div`
 `
 
 const BlogPost = styled.div`
-    height: auto;
+    max-width: 750px;
     box-shadow: 
     inset 0 -3em 3em rgba(0,0,0,0.1), 
             0.3em 0.3em 1em rgba(0,0,0,0.3);
@@ -23,6 +23,7 @@ const BlogPost = styled.div`
     border-radius: 15px;
     background: rgba(0, 0, 0, 0.5);
     text-align: center;
+    align-self: center;
 `
 
 const BlogImage = styled.img`

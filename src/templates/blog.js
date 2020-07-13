@@ -15,6 +15,7 @@ const BlogPostItemsWrapper = styled.div`
 
 const BlogImage = styled.img`
     width: 100%;
+    height: auto;
 `
 
 
