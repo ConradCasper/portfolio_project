@@ -22,7 +22,7 @@ const animatedgradient = keyframes`
 
 const NavItemWrapper = styled.div`
 
-
+    max-width: 960px;
     display: flex;
     flex-flow: row nowrap;
 
@@ -34,12 +34,14 @@ const NavItemWrapper = styled.div`
         transform: ${({ open }) => open ? 'translateX(0)' : 'translateX(100%)'};
         top: 0;
         right: 0;
-        height: 100vh;
+        height: 100%;
         width: 100%;
         padding-top: 10rem;
         transition: transform 0.3s ease-in-out;
         z-index: 10;
         background: rgba(29, 31, 32, 1);
+
+
 
         a{
             color: white;

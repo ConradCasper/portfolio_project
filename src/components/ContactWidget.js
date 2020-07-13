@@ -7,27 +7,35 @@ import styled from 'styled-components';
 
 
 const ContentContainer = styled.div`
-    max-width: 650px;
-    margin: 40px auto;
-    text-align: center;
-    width: 100%;
-    
-    
-    
+    @media (max-width: 768px){
 
-    @media (max-width: 768px) {
-        
-        flex-flow: row nowrap;
+        z-index: 11;
+        display: flex;
         justify-content: center;
-    
+        align-items: center;
+
+        max-width: 768px;
+        min-width: 320px;
+        
+        min-height: 92px;
+        
 
         a {
-            padding: 10px 10px !important;
-            z-index: 1 !important;
+            padding: 0 10px !important;
+            height: 50px !important;
+            width: 50px !important;
         }
-        
     }
 `
+    
+
+
+
+        
+    
+
+        
+        
 
 // ------------------------------------- Linkedin ------------------------------------------------
 
