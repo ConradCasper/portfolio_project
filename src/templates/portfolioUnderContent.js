@@ -1,7 +1,6 @@
 import React from 'react'
 import Layout from '../components/layout'
 import PortfolioItems from '../components/PortfolioItems'
-import styled from 'styled-components';
 import SEO from '../components/seo';
 
 

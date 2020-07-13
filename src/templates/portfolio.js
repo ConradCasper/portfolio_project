@@ -7,20 +7,29 @@ import { Link } from 'gatsby';
 
 
 
-const YouTubeEmbedResponsive = styled.div`
-  position:relative;
-  padding-bottom:56.25%;
-  padding-top:30px;
-  height:0;
-  overflow:hidden;
-  iframe, object, embed{
-    position:absolute;
-    top:0;
-    left:0;
-    width:100%;
-    height:100%;
-  }
-`;
+const PortfolioContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-content:center;
+    justify-content: center;
+    align-self: center;
+`
+
+
+// const YouTubeEmbedResponsive = styled.div`
+//   position:relative;
+//   padding-bottom:56.25%;
+//   padding-top:30px;
+//   height:0;
+//   overflow:hidden;
+//   iframe, object, embed{
+//     position:absolute;
+//     top:0;
+//     left:0;
+//     width:100%;
+//     height:100%;
+//   }
+// `;
 
 const PortfolioImage = styled.img`
     width: 100%;
@@ -38,19 +47,20 @@ const liveSiteFillIn = keyframes`
 
 
 const SiteLink = styled(Link)`
-text-decoration: none;
-background: #8B0000;
-color: white;
-border-radius: 5px;
-padding: 8px 8px;
-margin-bottom: 10px;
-display: inline-block;
+    text-decoration: none;
+    background: #8B0000;
+    color: white;
+    border-radius: 5px;
+    padding: 8px 8px;
+    width: 95px;
+    text-align: center;
+    margin: 0 0 20px 0;
 
-&:hover {
-  animation: 0.3s ${liveSiteFillIn} linear forwards;
-  -webkit-box-shadow: inset 0px 1px 22px 1px rgba(255,255,255,0.29);
-  -moz-box-shadow: inset 0px 1px 22px 1px rgba(255,255,255,0.29);
-  box-shadow: inset 0px 1px 22px 1px rgba
+    &:hover {
+    animation: 0.3s ${liveSiteFillIn} linear forwards;
+    -webkit-box-shadow: inset 0px 1px 22px 1px rgba(255,255,255,0.29);
+    -moz-box-shadow: inset 0px 1px 22px 1px rgba(255,255,255,0.29);
+    box-shadow: inset 0px 1px 22px 1px rgba
 `
 
 
@@ -60,6 +70,7 @@ display: inline-block;
 export default ({ pageContext }) => (
     <Layout>
         <SEO  title={pageContext.title} />
+        <PortfolioContainer>
         <h1>
             {pageContext.title}
         </h1>
@@ -67,21 +78,22 @@ export default ({ pageContext }) => (
             <>
                 
                 <SiteLink href={pageContext.acf.portfolio_url} target="_blank" rel="noopener noreferrer" >
-                    {/* <strong> */}
                         Visit live site 
-                    {/* </strong> */}
                 </SiteLink>
+                
                 <PortfolioImage src={pageContext.featured_media.source_url} />
+    
+                <div dangerouslySetInnerHTML={{__html: pageContext.content}}/>
             </>
 
             :
             <>
+                {/* <YouTubeEmbedResponsive dangerouslySetInnerHTML={{__html: pageContext.acf.youtube_embed}} /> */}
                 <div dangerouslySetInnerHTML={{__html: pageContext.content}}/>
-                <YouTubeEmbedResponsive dangerouslySetInnerHTML={{__html: pageContext.acf.youtube_embed}} />
             </>
         }
         
         
-        
+        </PortfolioContainer>
     </Layout>
 )

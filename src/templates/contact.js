@@ -96,15 +96,14 @@ const twitterFadeIn = keyframes`
 `
 
 const ContentContainer = styled.div`
-    // max-width: 960px;
     width: 100%;
-    // height: 100%;
     display: flex;
     flex-wrap: wrap;
     align-content:center;
     justify-content: center;
     align-self: center;
 `
+    
     
 
     

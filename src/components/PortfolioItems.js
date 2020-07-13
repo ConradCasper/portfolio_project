@@ -52,7 +52,6 @@ const PortfolioImage = styled.img`
 
 const ReadMoreLink = styled(Link)`
   text-decoration: none;
-  // background: rgba(0,0,0, 0.3);
   background: #8B0000;
   color: white;
   border-radius: 5px;
