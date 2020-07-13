@@ -35,7 +35,12 @@ const Pagination = styled.div`
 `
 
 const PageNumberWrapper = styled.div`
-    background: ${props => props.isCurrentPage ? 'rgba(0, 0, 0, 0.5)' : 'none'}
+    background: ${props => props.isCurrentPage ? 'rgba(0, 0, 0, 0.5)' : 'none'};
+
+    &:hover{
+        background: ${props => props.isCurrentPage ? 'rgba(0, 0, 0, 0.5)' : 'none'};
+        background: rgba(155, 0, 0, 0.5);
+    }
 `
     
 
@@ -56,7 +61,7 @@ const BlogLink = styled(Link)`
     color: white;
 
     &:hover {
-        color: darkred;
+        color: rgba(155, 0, 0, 0.5);
     }
 `
 
