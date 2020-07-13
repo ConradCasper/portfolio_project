@@ -7,9 +7,35 @@ import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
 import { Twitter } from '@styled-icons/boxicons-logos/Twitter';
 import { StackOverflow } from '@styled-icons/boxicons-logos/StackOverflow';
 import { EmailOutline } from '@styled-icons/evaicons-outline/EmailOutline';
+import { Instagram } from '@styled-icons/feather/Instagram';
+import { Soundcloud } from '@styled-icons/fa-brands/Soundcloud';
 
 
 const linkedinFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+const soundcloudFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+const instagramFadeIn = keyframes`
     0% {
         opacity: 0;
         transform: translateY(100px);
@@ -203,6 +229,53 @@ const EmailLink = styled(EmailOutline)`
     }
 `
 
+// ------------------------------------- Instagram ------------------------------------------------
+
+const instagramHover = keyframes`
+    0% {
+        color: white;
+    }
+
+    100% {
+        color: black;
+    }
+`
+
+
+const InstagramLink = styled(Instagram)`
+    width: 300px;
+    color: white;
+    align-self: center;
+    animation: 2s ${instagramFadeIn} ease-out;
+
+    :hover {
+        animation: 2s ${instagramFadeIn} ease-out, ${instagramHover} 1s forwards;
+    }
+`
+
+// ------------------------------------- Soundcloud ------------------------------------------------
+
+const soundcloudHover = keyframes`
+    0% {
+        color: white;
+    }
+
+    100% {
+        color: black;
+    }
+`
+
+
+const SoundcloudLink = styled(Soundcloud)`
+    width: 300px;
+    color: white;
+    align-self: center;
+    animation: 2s ${soundcloudFadeIn} ease-out;
+
+    :hover {
+        animation: 2s ${soundcloudFadeIn} ease-out, ${soundcloudHover} 1s forwards;
+    }
+`
 
 
 
@@ -219,15 +292,22 @@ export default ({ pageContext }) => (
                 <a href="https://github.com/ConradCasper">
                     <GithubLink />
                 </a>
+                <a href="https://stackoverflow.com/users/10720310/conrad-casper">
+                    <StackLink />
+                </a>
                 <a href="mailto:cnrdcasper@gmail.com">
                     <EmailLink />
                 </a>
                 <a href="https://twitter.com/Conrad_Casper">
                     <TwitterLink />
                 </a>
-                <a href="https://stackoverflow.com/users/10720310/conrad-casper">
-                    <StackLink />
+                <a href="https://www.instagram.com/captain.conrad/">
+                    <InstagramLink />
                 </a>
+                <a href="https://soundcloud.com/dj_repsac">
+                    <SoundcloudLink />
+                </a>
+                
             </ContentContainer>
     </Layout>
 );
