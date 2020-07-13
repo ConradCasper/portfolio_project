@@ -4,8 +4,10 @@ import styled, { keyframes } from 'styled-components';
 
 const PortfolioItemsWrapper = styled.div`
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    align-content:center;
     justify-content: center;
+    align-self: center;
 `
 
 const portfolioItemFadeIn = keyframes`

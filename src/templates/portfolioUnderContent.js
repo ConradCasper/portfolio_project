@@ -9,7 +9,7 @@ import SEO from '../components/seo';
 export default ({ pageContext }) => (
     <Layout>
         <SEO title={pageContext.title} /> 
-        <h1 dangerouslySetInnerHTML={{__html: pageContext.title}} />
+        {/* <h1 dangerouslySetInnerHTML={{__html: pageContext.title}} /> */}
         <PortfolioItems />
     </Layout>
 )
