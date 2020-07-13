@@ -148,10 +148,13 @@ exports.createPages = ({ graphql, actions }) => {
               node{
                 excerpt
                 wordpress_id
-                date(formatString:"MMM Do YYYY HH:mm")
+                date(formatString:"MMM Do, YYYY")
                 title
                 content
                 slug
+                featured_media{
+                  source_url
+                }
               }
             }
           }
@@ -163,10 +166,10 @@ exports.createPages = ({ graphql, actions }) => {
         }
 
         const posts = result.data.allWordpressPost.edges;
-        const postsPerPage = 4;
+        const postsPerPage = 2;
         const numberOfPages = Math.ceil(posts.length / postsPerPage);
         const blogPostListTemplate = path.resolve('./src/templates/blogPostList.js')
-
+        
         Array.from({length: numberOfPages}).forEach((page, index) => {
           createPage({
             component: slash(blogPostListTemplate),

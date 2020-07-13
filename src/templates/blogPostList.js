@@ -4,49 +4,97 @@ import { Link } from 'gatsby';
 import styled from 'styled-components';
 import SEO from '../components/seo';
 
+const BlogPostItemsWrapper = styled.div`
+    display: flex;
+    flex-direction: column;
+    align-content:center;
+    justify-content: center;
+    align-self: center;
+    width: 100%
+`
+
+const BlogPost = styled.div`
+    height: auto;
+    box-shadow: 
+    inset 0 -3em 3em rgba(0,0,0,0.1), 
+            0.3em 0.3em 1em rgba(0,0,0,0.3);
+    padding: 18px;
+    margin: 16px;
+    border-radius: 15px;
+    background: rgba(0, 0, 0, 0.5);
+    text-align: center;
+`
+
+const BlogImage = styled.img`
+    width: 100%;
+`
+
 const Pagination = styled.div`
     display: flex;
     justify-content: flex-end;
-    bottom: 0;
-    position: absolute;
 `
 
 const PageNumberWrapper = styled.div`
-    border: 1px solid #eee;
-    background: ${props => props.isCurrentPage ? '#eee' : 'white'}
+    background: ${props => props.isCurrentPage ? 'rgba(0, 0, 0, 0.5)' : 'none'}
+`
+    
+
+const Divider = styled.div`
+    height: 1px;
+    width: 90%;
+    background-color: grey;
+    margin: 0 auto;
+`
+
+const Date = styled.div`
+    font-size: 19px;
+    margin-top: 10px;
+`
+
+const BlogLink = styled(Link)`
+    text-decoration: none;
+    color: white;
+
+    &:hover {
+        color: darkred;
+    }
 `
 
 const PageNumber = styled(Link)`
     display: block;
     padding: 8px 16px;
     text-decoration: none;
+    color: ${props => props.isCurrentPage ? 'black' : 'white'}
 `
 
 export default ({ pageContext }) => (
     <Layout>
         <SEO title="Blog"/> 
-         {pageContext.posts.map(post => (
-             <div key={post.node.wordpress_id}>
-                 <h3 dangerouslySetInnerHTML={{__html: post.node.title}}/>
-                 <small>
-                     {post.node.date}
-                 </small>
-                 <p dangerouslySetInnerHTML={{__html: post.node.excerpt }} />
-                 <div>
-                     <Link to={`/post/${post.node.slug}`}>
-                        Read more
-                     </Link>
-                 </div>
-             </div>
-         ))}
-         <Pagination>
-            {Array.from({length: pageContext.numberOfPages}).map((page, index) => (
-                <PageNumberWrapper key={index} isCurrentPage={index + 1 === pageContext.currentPage}>
-                    <PageNumber to={index === 0 ? `/blog` : `/blog/${index + 1}`}>
-                    {index + 1}
-                    </PageNumber>
-                </PageNumberWrapper>
+        <BlogPostItemsWrapper>
+            {pageContext.posts.map(post => (
+                <BlogPost key={post.node.wordpress_id}>
+                    <BlogLink to={`/post/${post.node.slug}`}>
+                        <BlogImage src={post.node.featured_media.source_url} />
+                    </BlogLink>
+                    <BlogLink to={`/post/${post.node.slug}`}>
+                        <h2 dangerouslySetInnerHTML={{__html: post.node.title}}/>
+                    </BlogLink>
+                    <Divider />
+                    <p dangerouslySetInnerHTML={{__html: post.node.excerpt }} />
+                    <Date>
+                        {post.node.date}
+                    </Date>
+                </BlogPost>
             ))}
-         </Pagination>
+            <Pagination>
+                {Array.from({length: pageContext.numberOfPages}).map((page, index) => (
+                    <PageNumberWrapper key={index} isCurrentPage={index + 1 === pageContext.currentPage}>
+                        <PageNumber to={index === 0 ? `/blog` : `/blog/${index + 1}`}>
+                        {index + 1}
+                        </PageNumber>
+                    </PageNumberWrapper>
+                ))}
+            </Pagination>
+         </BlogPostItemsWrapper>
     </Layout>
 )
