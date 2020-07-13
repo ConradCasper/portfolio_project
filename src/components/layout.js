@@ -28,6 +28,7 @@ const LayoutWrapper = styled.div`
   background-image: linear-gradient(65deg, rgba(29, 31, 32, 1), rgba(29, 31, 32, 1), rgba(29, 31, 32, 1), rgba(29, 31, 32, 1), rgba(29, 31, 32, 1),rgba(70, 130, 180, 1), rgba(70, 130, 180, 1), rgba(70, 130, 180, 1));
   padding: 1em;
   min-height: 100%;
+  display: flex;
 
   @media (max-width: 768px){
     min-height: 100%;

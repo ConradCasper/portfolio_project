@@ -6,9 +6,22 @@ import { Github } from '@styled-icons/boxicons-logos/Github';
 import { LinkedinSquare } from '@styled-icons/boxicons-logos/LinkedinSquare';
 import { Twitter } from '@styled-icons/boxicons-logos/Twitter';
 import { StackOverflow } from '@styled-icons/boxicons-logos/StackOverflow';
+import { EmailOutline } from '@styled-icons/evaicons-outline/EmailOutline';
 
 
 const linkedinFadeIn = keyframes`
+    0% {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+    
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+`
+
+const emailFadeIn = keyframes`
     0% {
         opacity: 0;
         transform: translateY(100px);
@@ -57,29 +70,20 @@ const twitterFadeIn = keyframes`
 `
 
 const ContentContainer = styled.div`
-    max-width: 650px;
-    margin: 0 auto;
-    text-align: center;
+    // max-width: 960px;
     width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    // height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content:center;
+    justify-content: center;
+    align-self: center;
+`
     
 
-    @media (max-width: 768px) {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    
 
-        
-        // this enables all the flex properties to take over?? idk it works though!
-        position: unset;
-        top: unset;
-        left: unset;
-        transform: unset;
-    }
-`
+    
     
     
 
@@ -98,7 +102,7 @@ const linkedInHover = keyframes`
 
 
 const Linkedin = styled(LinkedinSquare)`
-    max-width: 300px;
+    width: 300px;
     color: white;
     align-self: center;
     animation: 2s ${linkedinFadeIn} ease-out;
@@ -121,9 +125,9 @@ const githubHover = keyframes`
 `
 
 const GithubLink = styled(Github)`
-    max-width: 300px;
+    width: 300px;
     color: white;
-    align-self: center;
+    // align-self: center;
     animation: 2s ${githubFadeIn} ease-out;
 
     :hover {
@@ -143,7 +147,7 @@ const twitterHover = keyframes`
 `
 
 const TwitterLink = styled(Twitter)`
-    max-width: 300px;
+    width: 300px;
     color: white;
     align-self: center;
     animation: 2s ${twitterFadeIn} ease-out;
@@ -166,13 +170,36 @@ const stackHover = keyframes`
 `
 
 const StackLink = styled(StackOverflow)`
-    max-width: 300px;
+    width: 300px;
     color: white;
     align-self: center;
     animation: 2s ${stackFadeIn} ease-out;
 
     :hover {
         animation: 2s ${stackFadeIn} ease-out, ${stackHover} 1s forwards;
+    }
+`
+
+// -------------------------------------- Email -------------------------------
+
+const emailHover = keyframes`
+    0% {
+        color: white;
+    }
+
+    100% {
+        color: black;
+    }
+`
+
+const EmailLink = styled(EmailOutline)`
+    width: 300px;
+    color: white;
+    align-self: center;
+    animation: 2s ${emailFadeIn} ease-out;
+
+    :hover {
+        animation: 2s ${emailFadeIn} ease-out, ${emailHover} 1s forwards;
     }
 `
 
@@ -191,6 +218,9 @@ export default ({ pageContext }) => (
                 </a>
                 <a href="https://github.com/ConradCasper">
                     <GithubLink />
+                </a>
+                <a href="mailto:cnrdcasper@gmail.com">
+                    <EmailLink />
                 </a>
                 <a href="https://twitter.com/Conrad_Casper">
                     <TwitterLink />
