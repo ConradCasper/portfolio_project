@@ -10,7 +10,8 @@ const BlogPostItemsWrapper = styled.div`
     align-content:center;
     justify-content: center;
     align-self: center;
-    width: 100%
+    width: 100%;
+    height: 100%;
 `
 
 const BlogPost = styled.div`
@@ -32,7 +33,8 @@ const BlogImage = styled.img`
 
 const Pagination = styled.div`
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    align-self: flex-end;
 `
 
 const PageNumberWrapper = styled.div`
