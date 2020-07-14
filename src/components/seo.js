@@ -24,7 +24,7 @@ function SEO({ title }) {
       {/* <!-- Primary Meta Tags --> */}
       
       <meta name="description" content="I am a web developer based in beautiful Atlanta, Georgia. I love creating slick frontend designs for businesses and clients looking to attract more customers to their website."/>
-      <meta name="robots" content="INDEX, FOLLOW" />
+
       {/* <!-- Open Graph / Facebook --> */}
       <meta property="og:type" content="website"/>
       <meta property="og:url" content="https://www.conradcasper.io/"/>
