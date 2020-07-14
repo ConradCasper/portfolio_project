@@ -26,11 +26,22 @@ const contentFadeIn = keyframes`
     }
 `
 
+const imgFadeIn = keyframes`
+    0% {
+        opacity: 0;
+    }
+    
+    100% {
+        opacity: 1;
+    }
+`
+
 
 
 const ProfileImage = styled.img`
     max-width: 100%;
     align-self: center;
+    animation: 2s ${imgFadeIn} linear;
 `
 
 const ContentContainer = styled.div`
