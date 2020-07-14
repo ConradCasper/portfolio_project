@@ -130,7 +130,7 @@ const Contact = styled(Link)`
 
 export default ({ pageContext }) => (
     <Layout>
-        <SEO title="Home" />
+        <SEO  />
             <ContentContainer>
                 <Header dangerouslySetInnerHTML={{__html: pageContext.acf.header}}/>
                 <Content dangerouslySetInnerHTML={{__html: pageContext.content}} />
