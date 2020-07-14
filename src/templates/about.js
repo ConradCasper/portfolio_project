@@ -29,8 +29,7 @@ const contentFadeIn = keyframes`
 
 
 const ProfileImage = styled.img`
-    max-width: 235px;
-    padding: 0px 16px 16px 0px;
+    max-width: 100%;
     align-self: center;
 `
 
