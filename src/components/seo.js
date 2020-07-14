@@ -35,10 +35,10 @@ function SEO({ title }) {
       {/* <!-- Twitter --> */}
       <meta name="twitter:card" content="summary_large_image"/>
       <meta name="twitter:url" content="https://www.conradcasper.io/"/>
-      <meta name="twitter:creator" content="@Conrad_Casper"></meta>
+      <meta name="twitter:creator" content="@Conrad_Casper" />
       <meta name="twitter:title" content="Conrad Casper | Full Stack Web Developer"/>
       <meta name="twitter:description" content="I am a web developer based in beautiful Atlanta, Georgia. I love creating slick frontend designs for businesses and clients looking to attract more customers to their website."/>
-      <meta name="twitter:image" content="http://wp.conradcasper.io/wp-content/uploads/2020/07/Screen-Shot-2020-07-14-at-12.55.03-PM.png"></meta>
+      <meta name="twitter:image" content="http://wp.conradcasper.io/wp-content/uploads/2020/07/Screen-Shot-2020-07-14-at-12.55.03-PM.png" />
     </Helmet>
   )
 }
