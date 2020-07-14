@@ -19,7 +19,8 @@ function SEO({ title }) {
   )
 
   return (
-    <Helmet title={ `${title}` ? `${title} | ${site.allWordpressSiteMetadata.edges[0].node.name} | ${site.allWordpressSiteMetadata.edges[0].node.description}` : `${site.allWordpressSiteMetadata.edges[0].node.name} | ${site.allWordpressSiteMetadata.edges[0].node.description}`} />
+    <Helmet 
+    title={ title ? `${title} | ${site.allWordpressSiteMetadata.edges[0].node.name} | ${site.allWordpressSiteMetadata.edges[0].node.description}` : `${site.allWordpressSiteMetadata.edges[0].node.name} | ${site.allWordpressSiteMetadata.edges[0].node.description}`} />
   )
 }
 
