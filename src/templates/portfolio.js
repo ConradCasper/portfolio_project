@@ -13,6 +13,7 @@ const PortfolioContainer = styled.div`
     align-content:center;
     justify-content: center;
     align-self: center;
+    width: 100%;
 `
 
 
