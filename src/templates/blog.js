@@ -21,7 +21,6 @@ const BlogImage = styled.img`
 
 export default ({ pageContext }) => (
     <Layout>
-        <SEO title={pageContext.title} />
             <BlogPostItemsWrapper>
                 <BlogImage src={pageContext.featured_media.source_url} />
                 <h1>{pageContext.title}</h1>
